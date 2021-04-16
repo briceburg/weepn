@@ -1,6 +1,6 @@
-# fly.toml file generated for old-hill-8307 on 2021-04-15T23:57:43-04:00
+# fly.toml file generated for wispy-bird-8709 on 2021-04-16T14:03:50-04:00
 
-app = "old-hill-8307"
+app = "wispy-bird-8709"
 
 kill_signal = "SIGINT"
 kill_timeout = 5
@@ -19,7 +19,6 @@ kill_timeout = 5
     type = "connections"
 
   [[services.ports]]
-    handlers = ["tls", "http"]
     port = 443
 
   [[services.tcp_checks]]
