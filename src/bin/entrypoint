@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+# the purpose of this file is to decode a base64 encoded binary vpn.key stored
+# as a plaintext "secret" in an environment variable named DSVPN_KEY
+
+[ -n "$DSVPN_KEY" ] || {
+  echo "err: empty DSVPN_KEY" >&2
+  exit 19
+}
+
+echo "decoding DSVPN_KEY ..." >&2
+echo "$DSVPN_KEY" | base64 -d > vpn.key
+
+exec dsvpn "$@"

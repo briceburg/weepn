@@ -1,0 +1,12 @@
+---
+version: "3.9"
+services:
+  dsvpn:
+    build: ./src
+    ports:
+      - 127.0.0.1:4443:443
+    tty: true
+    privileged: true
+    command: server vpn.key auto 443
+    environment:
+      DSVPN_KEY: ${DSVPN_KEY}
